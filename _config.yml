@@ -1,0 +1,14 @@
+name: One Page Scripts
+
+description: Screenplays one page long
+
+url: http://onepagescripts.com
+
+permalink: :title
+
+defaults: 
+  - 
+    scope: 
+      path: "" 
+    values: 
+      layout: "default" 

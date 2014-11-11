@@ -1,0 +1,82 @@
+/* onepagescripts.com */
+
+body{
+	margin: 0 auto;
+	width: 820px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a{
+	color: #428bca;
+	text-decoration: none;
+}
+a:hover{
+	color: #2a6496;
+	text-decoration: underline;
+}
+
+nav{
+	text-align: center;
+	margin: 30px;
+}
+
+nav a, span{
+	margin: 0 10px;
+}
+
+h1{
+	margin: 10px;
+}
+
+h2{
+	color: #666;
+	margin: 10px 0 0 0;
+}
+
+p.date{
+	color: #C0C0C0;
+	font-style: italic;
+	margin: 0 0 10px 0;
+	font-size: small;
+}
+
+header, footer{
+	text-align: center;
+	position: relative;
+}
+
+div.paper{
+	padding: 80px 30px;
+	background-image: url('crumpled-paper.jpg');
+	background-size: cover;
+	position: relative;
+	box-shadow: 10px 10px 20px #888;
+	margin-top: 10px;
+}
+
+div.circle{
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	position: absolute;
+	left: 8%;
+}
+
+div.circle-top{
+	top: 30%;
+}
+
+div.circle-bottom{
+	bottom: 30%;
+}
+
+div.script-text{
+	font-size: 17px;
+}
+
+footer{
+	margin-bottom: 30px;
+	font-size: small;
+	color: gray;
+}

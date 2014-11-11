@@ -1,0 +1,84 @@
+{% if page.title %}
+	{% assign post_number = page.title %}
+	{% assign date = page.date %}
+	{% assign script_title = page.script_title %}
+{% else %}
+	{% assign post_number = site.posts.first.title %}
+	{% assign date = site.posts.first.date %}
+	{% assign script_title = site.posts.first.script_title %}
+{% endif %}
+			
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% if page.title %} {{ script_title }} | {% endif %} One Page Scripts</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{ site.name }} - {{ site.description }}">
+
+		<link rel="stylesheet" href="{{site.baseurl}}/style.css" />
+	</head>
+
+	<body>
+		<header>
+			<a href="{{site.baseurl}}/" title="{{ site.description }}"><h1>{{ site.name }}</h1></a>
+			<div id="social-header">
+				<!--Facebook -->
+				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fonepagescripts&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=80&amp;" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height: 20px;width: 47px;;" allowTransparency="true"></iframe>
+				<!-- Twitter -->
+				<a href="https://twitter.com/onepagescripts" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @onepagescripts</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+			<h2>{{ script_title }}</h2>
+			<p class="date">
+				{{ date | date: "%A %-d %B  %Y" }}
+			</p>
+			<a href="{{site.baseurl}}/downloads/{{ post_number }}.pdf">View PDF</a>
+		</header>
+		<main>
+			<article>
+				<div class="paper">
+					<div class="circle circle-top"></div>
+					<div class="script-text">
+						{{ content }}
+					</div>
+					<div class="circle circle-bottom"></div>
+				</div>
+			</article>
+		</main>
+		<nav>
+			{% if post_number ==  "1" %}
+				<span>Previous</span>
+			{% else %}
+				<a href="/{{ post_number | minus:1 }}">Previous</a>
+			{% endif %}
+			{% if post_number == site.posts.first.title  %}
+				<span>Next</span>
+			{% else %}
+				<a href="/{{ post_number | plus:1 }}">Next</a>
+			{% endif %}
+		</nav>
+		<footer>
+			<div id="social-footer">
+				<!-- Facebook-->
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=504310483005860&version=v2.0";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<div class="fb-share-button" style="bottom:7px"></div>
+				<!-- Twitter -->
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="onepagescripts" data-count="none">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+			<div id="contact">
+				<p>
+					Contact: <a href="mailto:info@onepagescripts.com">info@onepagescripts.com</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -2,10 +2,12 @@
 	{% assign post_number = page.title %}
 	{% assign date = page.date %}
 	{% assign script_title = page.script_title %}
+	{% assign title_text = page.title_text %}
 {% else %}
 	{% assign post_number = site.posts.first.title %}
 	{% assign date = site.posts.first.date %}
 	{% assign script_title = site.posts.first.script_title %}
+	{% assign title_text = site.posts.first.title_text %}
 {% endif %}
 			
 <!DOCTYPE html>
@@ -47,7 +49,7 @@
 		</header>
 		<main>
 			<article>
-				<div class="paper">
+				<div class="paper" title="{{ title_text }}">
 					<div class="circle circle-top"></div>
 					<div class="script-text">
 						{{ content }}

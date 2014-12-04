@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% if page.title %} {{ script_title }} | {% endif %} One Page Scripts</title>
+		<title>{% if page.title %} {{ script_title }} | {{ site.name }} {% else %} {{ site.name }} | {{ site.description }} {% endif %}</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{{ site.name }} - {{ site.description }}">

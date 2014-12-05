@@ -34,18 +34,11 @@
 	<body>
 		<header>
 			<a href="{{site.baseurl}}/" title="{{ site.description }}"><h1>{{ site.name }}</h1></a>
-			<div id="social-header">
-				<!--Facebook -->
-				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fonepagescripts&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=80&amp;" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height: 20px;width: 47px;;" allowTransparency="true"></iframe>
-				<!-- Twitter -->
-				<a href="https://twitter.com/onepagescripts" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @onepagescripts</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</div>
 			<h2>{{ script_title }}</h2>
 			<p class="date">
 				{{ date | date: "%A %-d %B  %Y" }}
 			</p>
-			<a href="{{site.baseurl}}/downloads/{{ post_number }}.pdf"><img src="{{site.baseurl}}/pdf-icon.png" title="PDF"/></a>
+			<a href="{{site.baseurl}}/downloads/{{ post_number }}.pdf"><img src="{{site.baseurl}}/icon-pdf.png" title="PDF"/></a>
 		</header>
 		<main>
 			<article>
@@ -71,25 +64,21 @@
 			{% endif %}
 		</nav>
 		<footer>
-			<div id="social-footer">
-				<!-- Facebook-->
-				<div id="fb-root"></div>
-				<script>(function(d, s, id) {
-				  var js, fjs = d.getElementsByTagName(s)[0];
-				  if (d.getElementById(id)) return;
-				  js = d.createElement(s); js.id = id;
-				  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=504310483005860&version=v2.0";
-				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));</script>
-				<div class="fb-share-button" style="bottom:7px"></div>
-				<!-- Twitter -->
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="onepagescripts" data-count="none">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</div>
 			<div id="contact">
 				<p>
 					Contact: <a href="mailto:info@onepagescripts.com">info@onepagescripts.com</a>
 				</p>
+			</div>
+			<div id="social-links">
+				<a href="http://www.facebook.com/onepagescripts">
+					<img src="{{site.baseurl}}/icon-facebook.png" title="Facebook" style="height:24px" />
+				</a>
+				<a href="http://www.twitter.com/onepagescripts">
+					<img src="{{site.baseurl}}/icon-twitter.png" title="Twitter" style="height:24px" />
+				</a>
+				<a href="{{site.baseurl}}/feed.xml">
+					<img src="{{site.baseurl}}/icon-rss.png" title="RSS" style="height:24px" />
+				</a>
 			</div>
 		</footer>
 	</body>

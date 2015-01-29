@@ -4,6 +4,7 @@
 	{% assign script_title = page.script_title %}
 	{% assign title_text = page.title_text %}
 	{% capture page_title %}{{ script_title }} | {{ site.name }}{% endcapture %}
+	{% capture page_description %}{{ content | strip_html | truncatewords: 20 }}{% endcapture %}
 {% else %}
 	{% assign post_number = site.posts.first.title %}
 	{% assign date = site.posts.first.date %}
@@ -11,6 +12,7 @@
 	{% assign title_text = site.posts.first.title_text %}
 	{% assign page_title = site.name | site.description %}
 	{% capture page_title %}{{ site.name }} | {{ site.description }}{% endcapture %}
+	{% capture page_description %}{{ site.name }} - {{ site.description }}{% endcapture %}
 {% endif %}
 			
 <!DOCTYPE html>
@@ -19,11 +21,12 @@
 		<title>{{ page_title }}</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="{{ site.name }} - {{ site.description }}">
+		<meta name="description" content="{{ page_description }}">
 
 		<meta property="og:title" content="{{ page_title }}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="{{site.url}}/script-share-image.jpg" />
+		<meta property="og:description" content="{{page_description}}" />
 		
 		<link rel="stylesheet" href="{{site.baseurl}}/style.css" />
 		

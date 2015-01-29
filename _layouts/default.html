@@ -3,22 +3,30 @@
 	{% assign date = page.date %}
 	{% assign script_title = page.script_title %}
 	{% assign title_text = page.title_text %}
+	{% capture page_title %}{{ script_title }} | {{ site.name }}{% endcapture %}
 {% else %}
 	{% assign post_number = site.posts.first.title %}
 	{% assign date = site.posts.first.date %}
 	{% assign script_title = site.posts.first.script_title %}
 	{% assign title_text = site.posts.first.title_text %}
+	{% assign page_title = site.name | site.description %}
+	{% capture page_title %}{{ site.name }} | {{ site.description }}{% endcapture %}
 {% endif %}
 			
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% if page.title %} {{ script_title }} | {{ site.name }} {% else %} {{ site.name }} | {{ site.description }} {% endif %}</title>
+		<title>{{ page_title }}</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{{ site.name }} - {{ site.description }}">
 
+		<meta property="og:title" content="{{ page_title }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="{{site.url}}/script-share-image.jpg" />
+		
 		<link rel="stylesheet" href="{{site.baseurl}}/style.css" />
+		
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

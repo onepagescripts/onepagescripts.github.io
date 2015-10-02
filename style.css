@@ -33,7 +33,7 @@ h2{
 	margin: 10px 0 0 0;
 }
 
-p.date{
+.date{
 	color: #C0C0C0;
 	font-style: italic;
 	margin: 0 0 10px 0;
@@ -79,4 +79,12 @@ footer{
 	margin-bottom: 30px;
 	font-size: small;
 	color: gray;
+}
+::selection{
+    color:                    #fff;
+    background-color: #000;
+}
+::-moz-selection{
+    color:                    #fff;
+    background-color: #000;
 }

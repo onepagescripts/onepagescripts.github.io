@@ -47,8 +47,11 @@
 			<a href="{{site.baseurl}}/" title="{{ site.description }}"><h1>{{ site.name }}</h1></a>
 			<h2>{{ script_title }}</h2>
 			<p class="date">
-				{{ date | date: "%A %-d %B  %Y" }}
+        <time datetime="{{date}}">
+          {{ date | date: '%A %-d %B %Y' }}
+        </time>
 			</p>
+      
 			<a href="{{site.baseurl}}/downloads/{{ post_number }}.pdf"><img src="{{site.baseurl}}/icon-pdf.png" title="PDF"/></a>
 		</header>
 		<main>
@@ -77,7 +80,7 @@
 		<footer>
 			<div id="contact">
 				<p>
-					Contact: <a href="mailto:info@onepagescripts.com">info@onepagescripts.com</a>
+					<a href="mailto:info@onepagescripts.com">info@onepagescripts.com</a>
 				</p>
 			</div>
 			<div id="social-links">

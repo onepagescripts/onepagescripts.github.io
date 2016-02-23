@@ -4,6 +4,9 @@ description: Screenplays one page long
 
 url: http://onepagescripts.com
 
+gems:
+  - jekyll-sitemap
+  
 permalink: :title
 
 defaults: 
